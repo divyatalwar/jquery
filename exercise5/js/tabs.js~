@@ -18,6 +18,6 @@ $(document).ready(function() {
     });
  });
   $module.eq(0).show();
-  $list.children('li:first').addClass('current');
+  $list.children('li:first').addClass('current');                          //since the selected tab has a class current
 });
 
