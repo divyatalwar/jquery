@@ -9,9 +9,9 @@ $(document).ready(function() {
 });
 function fade(elem) {  
   elem.delay(1535).fadeIn(520, function() {
-    $navigation.text('You are viewing ' + (elem.find('img').attr('alt')) + " image out of the total of " + $length + " images");
+    $navigation.text((i+1) + " of " + $length);    
     elem.delay(1010).fadeOut(520);
-    i = i+1;
+    i = i + 1;
     if(i == $length) {
       i = 0;
       fade($elements.first());
