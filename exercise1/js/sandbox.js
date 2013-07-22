@@ -4,8 +4,7 @@ $(document).ready(function() {
   //solution to 2
   alert($('#myList li:nth-child(3)').html());
   alert($('#myList li:eq(2)').html());
-  alert($('#myListItem').html());
-  //third one seems to be the best solution as we are directing searching the element by its id instead of travering the list.
+  alert($('#myList li:contains("item 3")');
   //solution to 3 
   alert($("label[for='q']").html());
   //solution to 4
@@ -13,7 +12,6 @@ $(document).ready(function() {
   //solution to 5
   alert($('img[alt]').length);
   //solution to 6
-  $('tr:odd').each(function() {
-    alert($(this).html());
+  $('tr:odd').length ;
   });
 });
