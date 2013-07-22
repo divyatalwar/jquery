@@ -1,0 +1,25 @@
+.highlight
+{
+background-color:#cfcfcf;
+}
+#container
+{
+width:400px;
+float:left;
+}
+#add
+{
+position:absolute;
+right:10px;
+top:10px;}
+.innerdiv 
+{
+padding-top:20px;
+width:400px;
+height:60px;
+border:solid 1px black;
+}
+.highlight
+{
+background-color:yellow;
+}
