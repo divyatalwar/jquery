@@ -4,10 +4,10 @@ $(document).ready(function() {
     $(this).after($('<div>'));
     $targetDiv = $(this).next();
     $(this).data('ref' ,$targetDiv);
-    $(this).click(function(e) {
+    })
+    .click(function(e) {
       e.preventDefault();
-      post = $(this).find('a').attr('href').split("#")[1];
-      $(this).data('ref').load('blog.html #'+ post);
+      post = $(this).find('a').attr('href');
+      $(this).data('ref').load(post);
     });  
   });
-});
