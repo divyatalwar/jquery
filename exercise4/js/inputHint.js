@@ -12,12 +12,13 @@ $(document).ready(function() {
   //4.Bind a focus event to the search input that removes the hint text and the "hint" class
   //5.Bind a blur event to the search input that restores the hint text and "hint" class if no search text was entered
   searchInput.bind('focus', function() {
-		$(this).val("").removeClass('hint');
+  if ($(this).val() == labelText && $(this).hasClass('hint')) {
+      $(this).val('').removeClass('hint');
+    }
 	})
 	.bind('blur', function() {	 
-	  if($(this).val()=="") {
-      $(this).val(labelText);
+	  if($(this).val().trim()=="") {
+      $(this).val(labelText).addClass('hint');
     }      
-    $(this).addClass('hint');
   });
 });
