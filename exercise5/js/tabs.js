@@ -7,9 +7,7 @@ $(document).ready(function() {
   $list.insertBefore($module.first());
   //3.Iterate over the modules using $.fn.each. For each module, use the text of the h2 element as the text for a list item that you add to   the unordered list element.
   $module.each(function( index ) {
-    var $currentDiv = $(this);
-    var $content = $currentDiv.find('h2').text();
-    var $listItem = $("<li>").html($content).appendTo($list);
+    var $currentDiv = $(this), $content = $currentDiv.find('h2').text(), $listItem = $("<li>").html($content).appendTo($list);
     //4.Bind a click event to the list item that:Shows the related module, and hides any other modules , Adds a class of "current" to the clicked list item , Removes the class "current" from the other list item
     $listItem.click(function() {
       $(this).addClass('current').siblings().removeClass('current');
