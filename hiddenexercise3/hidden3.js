@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   //by default all radio buttons are disabled
   $(":radio").attr("disabled", true);
   // a click event bind to the rating parameters.
