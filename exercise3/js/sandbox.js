@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  //solution to 1
+  //solution to 1.
   var listArray = [];
   var divArray = [];
   var list = $('#myList');
@@ -7,7 +7,7 @@ $(document).ready(function() {
     listArray.push('<li>item' + (i+1) +'</li>');
   }
   $('#myList').append(listArray.join(''));
-  //solution to 2
+  //solution to 2.
   $('#myList li:odd').remove();
   //solution to 3
   divArray.push('<h2> heading added </h2><p> paragraph added </p>');
