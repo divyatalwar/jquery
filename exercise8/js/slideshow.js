@@ -7,6 +7,7 @@ $(document).ready(function() {
   i = 0;
   fade($elements.first());
 });
+//recursive call made
 function fade(elem) {  
   elem.delay(1535).fadeIn(520, function() {
     $navigation.text((i+1) + " of " + $length);    
