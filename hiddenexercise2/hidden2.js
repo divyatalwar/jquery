@@ -8,7 +8,6 @@ jsonArray = {"clothing":[{"name":"clothing product1" , "price":500, "description
 {"name":"grocery product2" , "price":100, "description":"it is a grocery product intended to give specific  functionality"},
 {"name":"grocery product3" , "price":300, "description":"it is a grocery product intended to give specific  functionality"}]}
 
-
 $(document).ready(function() {
   $('#mycart1').hide();
   var cart = new myCart();
@@ -72,7 +71,7 @@ function myCart(){
       });
       $('.'+ myId).find('input').val("");
       if(!bool) {
-        $('#tableid').append('<tr id="' +myId +'"</td><td>' + productName + '</td><td>' + price + '</td><td>' + quantity + '</td><td>' + subTotal + '</td><td><input type="submit" value="remove" class="remove" id="remove/' + myId + '"></td></tr>');
+        $('#tableid').append('<tr id="' +myId +'"><td>' + productName + '</td><td>' + price + '</td><td>' + quantity + '</td><td>' + subTotal + '</td><td><input type="submit" value="remove" class="remove" id="remove/' + myId + '"></td></tr>');
       }
       kart.calculateTotal();
       $('#mycart').text('My Cart ('+($('#tableid tr').length-1) +')');   
