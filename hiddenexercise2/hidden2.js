@@ -1,4 +1,3 @@
-
 jsonArray = {"clothing":[{"name":"clothing product1" , "price":500, "description":"it is a clothing product intended to give specific  functionality"},
 {"name":"clothing product2" , "price":600, "description":"it is a clothing product intended to give specific  functionality"},
 {"name":"clothing product3" , "price":700, "description":"it is a clothing product intended to give specific  functionality"}],
