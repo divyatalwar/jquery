@@ -12,18 +12,6 @@ jsonArray = {"clothing":[{"name":"clothing product1" , "price":500, "description
 $(document).ready(function() {
   $('#mycart1').hide();
   var cart = new myCart();
-  $('#container').delegate('#types', 'change', function(){
-    item = $('#types option:selected').val();
-    cart.displayCart(item);
-  });
-  $('#container').delegate('#addToCart', 'click', function(){
-    var id = $(this).parent().attr('id');
-    cart.addToCart(id);
-  });
-  $('#container').delegate('.remove', 'click', function(){
-    var id = $(this).attr('id');
-    cart.remove(id);
-  });
   $('#container').delegate('#mycart', 'click', function(){
     $('#mycart1').show();
     $('#lowercontent').hide();
@@ -33,19 +21,37 @@ $(document).ready(function() {
     $('#mycart1').hide();
     $('#lowercontent').show();
     $('#lowerportion').show();
+  });  
+  $('#container').delegate('#types', 'change', function(){
+    item = $('#types option:selected').val();
+    cart.displayCart(item);
   });
+  $('#container').delegate('#add', 'click', function(){
+    var id = $(this).parent().attr('id');
+    cart.addToCart(id);
+  });
+  $('#container').delegate('.remove', 'click', function(){
+    var id = $(this).attr('id');
+    cart.remove(id);
+  });
+  $('#container').delegate('#checkout','click',function() {
+    $('#mycart1').hide();
+    $('#lowercontent').hide();
+    $('#lowerportion').hide();
+    $('#container').html("thanku for shopping").css('font-size','24');
+  });   
 });
 function myCart(){
   var kart=this;
   this.displayCart = function(item){
     $('#products').addClass('border');
-    $('div.myDiv').remove();
+    $('.myDiv').remove();
     for(var i = 0; i < jsonArray[item].length; i++) {
         var newDiv = $('#myproduct').clone();
-        $(newDiv).removeClass('hidden').addClass('myDiv').attr({'id':i+"_"+item,'class':i+"_"+item}).find('#myName').text(" name:" + jsonArray[item][i].name).siblings('#mycontent').text(" content: " + jsonArray[item][i].description).siblings('#myPrice').text(" Price: Rs." + jsonArray[item][i].price);           
+        $(newDiv).removeClass('hidden').attr({'id':i+"_"+item,'class':i+"_"+item +" " +'myDiv'}).find('#myName').text(" name:" + jsonArray[item][i].name).siblings('#mycontent').text(" content: " + jsonArray[item][i].description).siblings('#myPrice').text(" Price: Rs." + jsonArray[item][i].price);           
         $('#lowercontent').append(newDiv);
-     }
     }
+  }
   this.addToCart = function(myId){
     var myRegex=/^[0-9]+$/;
     var bool= false;
@@ -64,12 +70,12 @@ function myCart(){
           bool=true;
           }
       });
-      $('#'+ myId).find('input').val("");
+      $('.'+ myId).find('input').val("");
       if(!bool) {
-        $('#tableid').append('<tr id="' +myId +'"</td><td>' + productName + '</td><td>' + price + '</td><td>' + quantity + '</td><td>' + subTotal + '</td><td><input type="submit" value="remove" class="remove" id="remove_' + myId + '"></td></tr>');
-}
+        $('#tableid').append('<tr id="' +myId +'"</td><td>' + productName + '</td><td>' + price + '</td><td>' + quantity + '</td><td>' + subTotal + '</td><td><input type="submit" value="remove" class="remove" id="remove/' + myId + '"></td></tr>');
+      }
       kart.calculateTotal();
-      $('#mycart').text('My Cart (' + ($('#tableid tr').length-1) + ')');   
+      $('#mycart').text('My Cart ('+($('#tableid tr').length-1) +')');   
     }
     else {
       alert("please specify the valid quantity");
@@ -83,9 +89,11 @@ function myCart(){
     $('#totalprice').val(total);
   }
   this.remove = function(id){
-    $('#' + id).closest('tr').remove();
+    rowId=id.split("/")[1];
+    $('tr#' + rowId).remove();
     kart.calculateTotal();
     $('#totalprice').val(total);
+    $('#mycart').text('My Cart ('+($('#tableid tr').length-1) +')');
   }
 }
 
