@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  //1
+  //1.
   $('img').each(function(index) {
   alert("image" + (index + 1) + " alt attribute : " + $(this).attr('alt'));
   });
