@@ -10,9 +10,7 @@ $(document).ready(function() {
       var $name = $('td.product.highlight').attr('id');
       var $value = $(this).attr('id');
       $(":radio[value='" + $value + "'][name='" +$name+"']").attr("checked", true);
-      for(var i=0;i<$('input[type="radio"]:checked').length;i++) {
-        $('input[type="radio"]:checked').removeAttr('disabled');
-      }
+      $('input[type="radio"]:checked').removeAttr('disabled');
     }
     else {  
       $(":radio").attr("disabled", true);
