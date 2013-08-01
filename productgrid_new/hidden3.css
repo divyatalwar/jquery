@@ -1,0 +1,52 @@
+#filter
+{
+width:300px;
+height:200px;
+border:solid 1px black;
+}
+#mybrand
+{
+position:absolute;
+float:left;
+border:solid 1px black;
+border-right:none;
+}
+.abc {
+height:10px;
+width:20px;
+}
+#outerDiv
+
+{
+float:left;
+position:absolute;
+left:400px;
+top:0px;
+
+}
+img {
+width:90px;
+height:90px;
+}
+.hidden
+{
+display:none;
+}
+.a
+{
+
+float:left;
+}
+#mycolor
+{
+position:absolute;
+float:left;
+left:110px;
+border:solid 1px black;
+width:90px;}
+#mysold_out
+{
+position:absolute;
+float:left;
+left:190px;
+}
