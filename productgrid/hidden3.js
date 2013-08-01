@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  var brandId,brandColor;
   $.ajax({
     url: "product.json",
     type: "GET",
