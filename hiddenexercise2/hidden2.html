@@ -3,57 +3,59 @@
     <link rel="stylesheet" type="text/css" href="hidden2.css">
   </head>
   <body>
-    <div id="container">
+<div id="container">
       <div id="upper">
-        <div id="products">
+        <div id="products" class="products mycart">
           <a >products </a>
         </div>
-        <div id= "mycart" >
-          <a> mycart</a>
+        <div id= "mycart" class="products mycart">
+          <a> My Cart</a>
         </div>
-      </div>
-      <div id="mycart1">
-        <table id ="tableid" border ="1" width="800px">
-          <tr>
-            <th>products </th>
-            <th> price </th>
-            <th>quantity </th>
-            <th>subtotal </th>
-            <th>         </th>
-          </tr>
-        </table>
-      </div>
-      <div id= "lowerportion">
-        <div id="search1">
-          <label for="search"> search </label>
-          <input type ="text" id="search">
+        <div id="mycart1" class="hidden mycart">
+          <table id ="tableid" border ="1" width="800px">
+            <tr>
+              <th>products </th>
+              <th> price </th>
+              <th>quantity </th>
+              <th>subtotal </th>
+              <th>         </th>
+            </tr>
+          </table>
         </div>
-        <div id="a">
-          <input type="submit" value="search">
-          <input type="submit" value="clear">
-          <label for="category"> category </label>
-          <select id = "types">
-            <option id="none" ></option>
-            <option id="clothing" value="clothing" > clothing </option>
-            <option id="electronics"value="electronics"> electronics </option>
-            <option id="grocery" value="grocery"> grocery </option>
-          </select>
+        <div id= "lowerportion" class="products">
+          <div id="search1">
+            <span id="mysearch">search </span>
+            <input type ="text" id="search">
+          </div>
+          <div id="a">
+            <input type="submit" value="search">
+            <input type="submit" value="clear">
+            <label for="category"> category </label>
+            <select id = "types">
+              <option id="all" value="all"selected>all</option>
+              <option id="clothing" value="clothing" > clothing </option>
+              <option id="electronics"value="electronics"> electronics </option>
+              <option id="grocery" value="grocery"> grocery </option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div id="lowercontent">
-      </div>
-      <div id="myproduct" class="hidden">
-        <div id="myName">item name</div>
-        <div id="mycontent">content</div>
-        <div id="myPrice">price</div>
-        <input  class="cart"type="text"size="1"> 
-        <button class="cart"id="add">add to cart</button>
-      </div>     
-      <div id="price">
-        total : <input type="text" id="totalprice" >
-        <input type="submit" value="checkout"id="checkout">
-      </div>
-    </div>
+        <div id="lowercontent" class="products">
+        </div>
+        <div id="myproduct" class="hidden">
+          <div id="myName">item name</div>
+          <div id="mycontent">content</div>
+          <div id="myPrice">price</div>
+          <input  class="cart"type="text"size="1"> 
+          <button class="cart"id="add">add to cart</button>
+        </div>  
+</div>   
+       
+        <div id="home" class="hidden"><a> home </a></div>
+ <div id="price">
+          <span id="total">total :</span> <input type="text" id="totalprice"  readOnly=true>
+          <input type="submit" value="checkout"id="checkout">
+        </div>
+</div>
     <script src="jquery-1.10.2.js"></script>
     <script type="text/javascript" src="hidden2.js"></script>
   </body>

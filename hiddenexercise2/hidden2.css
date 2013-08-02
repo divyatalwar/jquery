@@ -1,20 +1,44 @@
 #container
 {
-width:800px;
-height:700px;
 background-color:#cfcfcf;
+
+width:800px;
+height:500px;
+}
+#upper
+{
+background-color:#cfcfcf;
+overflow-y:auto;
+overflow-x:hidden;
+width:813px;
+height:500px;
+}
+#myname {
+position:relative;
 }
 #lowercontent
 {
-position:absolute;
-top:120px;
+width:813px;
+float:left;
+position:relative;
+top:50px;
 left:10px;
+}
+#total {
+
+}
+.mycss {
+
+border-bottom:solid 1px black;
+}
+.mycolor
+{
+background-color:red;
 }
 #products
 {
-width:400px;
+width:390px;
 border:solid 1px black;
-
 float:left;
 color:black;
 font-size:20px;
@@ -28,9 +52,7 @@ display:none;
 
 #mycart
 {
-position:absolute;
-top:8px;
-left:410px;
+position:relative;
 width:395px;
 border:solid 1px black;
 font-size:20px;
@@ -44,50 +66,68 @@ color:black;
 #search1
 {
 float:left;
-position:absolute;
-top:40px;
-
+position:relative;
+top:15px;
+left:-30px;
+}
+.placing
+{
+background-color:red;
+width:820px;
+text-align:center;
+}
+#mysearch
+{
+position:relative;
+left:-171px;
 }
 #search
 {
 float:left;
-position:absolute;
+position:relative;
 top:0px;
 left:80px;
 width:200px;
 }
 .cart {
-position:absolute;
+position:relative;
 left:400px;
+top:-10px;
 }
+#types {    position: relative;
+    top: 0px;
+left: 50px;}
 #a
 {
 float:left;
-position:absolute;
-left:290px;
-top:40px;
+position:relative;
+
+top:15px;
 }
 
 #tableid
 {
+float:left;
 width:500px;
-position:absolute;
+position:relative;
 top:50px;
+
 }
 
 .cart{
 position:relative;
-left:490px;
-top:-68px;
+left:590px;
+top:-20px;
 }
 
 #price
 {
+background-color:#cfcfcf;
 border:solid 1px black;
-width:798px;
-position:absolute;
-top:510px;
-left:7px;
+width:810px;
+position:relative;
+
+left:0px;
 font-size:20px;
 text-align:center;
 }
