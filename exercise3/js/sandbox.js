@@ -2,7 +2,7 @@ $(document).ready(function() {
   //solution to 1.
   var list = $('#myList');
   for(var i = 0 ; i < 5 ; i++) {
-    ($('<li>item' + (i+1)+'</li>')).appendTo(list);
+    ($('<li>').text('item' + (i+1))).appendTo(list);
   }
   //solution to 2.
   $('#myList li:odd').remove();
