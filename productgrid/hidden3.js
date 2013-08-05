@@ -23,18 +23,17 @@ $(document).ready(function() {
     filter();     
   });
   function filter() {
-    var filtered_set = $('.innerdiv');
-    filtered_set = filterby("brand", filtered_set); 
-    filtered_set = filterby("color", filtered_set);
-    if ($('#available:checked').length){
-      filtered_set = filterby("sold_out", filtered_set);
-    }
-    filtered_set.removeClass('hidden');
+    var filteredSet = $('.innerdiv');
+    filteredSet = filterby("brand", filteredSet); 
+    filteredSet = filterby("color", filteredSet);
+    filteredSet = filterby("sold_out", filteredSet);
+    filteredSet.removeClass('hidden');
   }
   function filterby(element, jqueryobject) {
     var myselector = [];
-    if ($('#my' + element + ' :input:checked').length > 0) {
-      $('#my' + element + ' :input:checked').each(function(index) {
+    var checkedCriteria = $('#my' + element + ' input[value]:checked');
+    if (checkedCriteria.length > 0) {
+      checkedCriteria.each(function(index) {
         myselector.push('[data-' + element + '="' + $(this).val() + '"]');
       });
       return jqueryobject.filter(myselector.join(','));
