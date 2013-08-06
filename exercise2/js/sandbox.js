@@ -8,7 +8,7 @@ $(document).ready(function() {
   //3
   $('#myList li.current').removeClass('current').next().addClass('current');
   //4
-  alert($('#specials select[name="day"]').parents('#specials').find('input[type="submit"]').val());   
+  alert($('#specials select[name="day"]').closest('form').find('input[type="submit"]').val());   
   //5
   $('#slideshow li:first-child').addClass('current').siblings().addClass('disabled');
 });
