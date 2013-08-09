@@ -38,10 +38,7 @@ $(function() {
     mycart.remove(id);
   });
   $('#container').delegate('#checkout','click',function() {
-    $('#container').html('<div style="text-align:center">Ooopss!! u exited the shopping cart.thanku for visiting<br><input type="submit" value="home" id="home"></div>');
-  });
-  $('body').delegate("#home","click",function(event) {
-    location.reload();
+    $('#container').html('<div style="text-align:center">Ooopss!! u exited the shopping cart.thanku for visiting<br><a href="hidden2.html">home</a></div>');
   });
   $('#tableid').delegate('.changeValue', 'focusout', function(){
     var id = $(this).parent().parent().attr('id');
@@ -109,7 +106,7 @@ var cart=function(jsonCart) {
   this.remove=function(id){
     $("#"+id).remove();
     kart.calculateTotal();
-    $('#totalprice').val(total);
+    //$('#totalprice').val(total);
     if ($('#tableid tr').length-1) {
       $('#mycart').text('My Cart ('+($('#tableid tr').length-1) +')');
     }
