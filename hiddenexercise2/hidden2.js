@@ -106,7 +106,6 @@ var cart=function(jsonCart) {
   this.remove=function(id){
     $("#"+id).remove();
     kart.calculateTotal();
-    //$('#totalprice').val(total);
     if ($('#tableid tr').length-1) {
       $('#mycart').text('My Cart ('+($('#tableid tr').length-1) +')');
     }
