@@ -59,7 +59,7 @@ var cart=function(jsonCart) {
       if (jsonArray.hasOwnProperty(key)){         
         for(var i = 0; i < jsonArray[key].length; i++){
           var newDiv = $('#myproduct').clone();
-          $(newDiv).removeClass('hidden').attr({'id':i+"_"+key,'class':key+' '+'myDiv mycss'}).children('.myName').text(" name:" + jsonArray[key][i].name).siblings('.mycontent').text(" content: " + jsonArray[key][i].description).siblings('.myPrice').text(" Price: Rs." + jsonArray[key][i].price);           
+          $(newDiv).removeClass('hidden').attr({'id':i+"_"+key,'class':key+' '+'myDiv mycss'}).children('.myName').text(" name:" + jsonArray[key][i].name).siblings('.mycontent').text(" content: " + jsonArray[key][i].description).siblings('.myPrice').text(" Price: Rs." + jsonArray[key][i].price);        
           $('#lowercontent').append(newDiv);
         }
       }
@@ -86,11 +86,12 @@ var cart=function(jsonCart) {
     var quantity = $('#'+ myId).children('input').val();
     var subTotal = price*quantity;
     if(myRegex.test(quantity)){
-      $('#tableid').append('<tr id="row' +myId +'"><td class="product">' + productName + '</td><td class="price">' + price + '</td><td class><input type="text" size="1" class="changeValue" value = "' + quantity + '"></td><td class="subTotal">' + subTotal + '</td><td><input type="submit" value="remove" class="remove" id="remove-' + myId + '"></td></tr>');
+      $('#tableid').append('<tr id="row-' +myId +'"><td class="product">' + productName + '</td><td class="price">' + price + '</td><td class><input type="text" size="1" class="changeValue" value = "' + quantity + '"></td><td class="subTotal">' + subTotal + '</td><td><input type="submit" value="remove" class="remove" id="remove-' + myId + '"></td></tr>');
       kart.calculateTotal();
       $('#mycart').text('My Cart ('+($('#tableid tr').length-1) +')');
-      $('#'+ myId).find('input').val(""); 
+      $('#'+ myId).find('input').val("");
       $('#'+myId).find('input').prop('disabled',true);  
+      $('#'+myId).find('button').prop('disabled',true);
     }
     else {
      alert("please specify the valid quantity");
@@ -105,9 +106,12 @@ var cart=function(jsonCart) {
   }
   this.remove=function(id){
     $("#"+id).remove();
+    var divId = id.split("-")[1];
+    $('#'+divId).find('input').prop('disabled',false);
+    $('#'+divId).find('button').prop('disabled',false);
     kart.calculateTotal();
     if ($('#tableid tr').length-1) {
-      $('#mycart').text('My Cart ('+($('#tableid tr').length-1) +')');
+      $('#mycart').text('My Cart ('+($('#tableid tr').length-1) +')');  
     }
     else {
       $('#mycart').text('My Cart ');
