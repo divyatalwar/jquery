@@ -1,0 +1,124 @@
+#roles {
+  height: 400px ;
+  width: 300px;
+  text-align: center;
+  margin-left: 30px;
+}
+.hidden {
+  display:none;
+}
+.roles {
+  padding-top:30px;
+  text-align:center;
+  padding-bottom:30px;
+  background-color:#cfcfcf;
+  width:300px;
+}
+.heading {
+  background-color:blue;
+  padding-left:121px;
+  padding-right:120px;
+}
+
+.role {
+  border: solid 1px black;
+  height:auto;
+  overflow:auto;
+}
+#employees {
+  height: 198px ;
+  width: 150px;
+  border: solid 1px black;
+  position: relative;
+  left: 400px;
+  top: -398px;
+  text-align: center;
+  background-color:#cfcfcf;
+}
+.roles ~ div:hover {
+  font-size:20px;
+  font-style:bold-italic;
+  background-color:blue;
+}
+#myList {
+  margin: 0px;
+  position: relative;
+  top:20px;
+  left: -40px;
+  text-align: left;
+}
+.employees {
+  list-style-type: none; 
+  border: solid 1px black;
+  height: 30px;
+  width:150px;
+  margin-left: 0px;
+}
+
+#todos {
+  height: auto;
+  width: 590px;
+  border: solid 1px black;
+  position: relative;
+  left: 600px;
+  top: -500px;
+  text-align: center;
+}
+.RORTodos { 
+  border-top: solid 1px black;
+  height:auto;
+  overflow: auto;
+}
+.JqueryTodos { 
+  border-top: solid 1px black;
+  height:auto;
+  overflow: auto;
+}
+
+.todos {
+  text-align: center;
+  height: auto ;
+  border: solid 1px black;
+}
+
+img {
+  width : 15px;
+  height : 20px;
+  position : absolute;
+}
+
+.role > div {
+  list-style-type: none; 
+  text-align: center;
+  height: 30px;
+  width:295px;
+  border-top: solid 1px black;
+  position: relative;
+  background-color:#cfcfcf ;
+}
+.todo > div > li {
+  list-style-type: none; 
+  border: solid 1px brown;
+  height: 20px;
+  width: 70px;
+  margin-left: 20px;
+  margin-top: 10px;
+  background-color:blue;
+}
+.todo > div >div {
+  border: solid 1px black;
+  height: 50px;
+  width: 385px;
+  position: relative;
+  margin-left: 100px;
+  top: -23px;
+  text-align: center;
+  background-color:#cfcfcf;
+}
+
+.position {
+  position:absolute;
+  left:0px;
+  top:2px;
+}
+
